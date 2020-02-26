@@ -1,32 +1,38 @@
-@extends('layouts.app')
+@extends('layouts.app', [
+    'parentSection' => 'dashboards',
+    'elementName' => 'dashboard'
+])
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
+    @component('layouts.headers.auth') 
+        @component('layouts.headers.breadcrumbs')
+            @slot('title') 
+                {{ __('') }} 
+            @endslot
 
-            <div class="col-md-9">
+            <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="%%crudNameCap%%"> %%crudNameCap%% </a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ __('Visualizar %%crudNameCap%% ID ' . $%%crudNameSingular%%->%%primaryKey%%) }}</li>
+        @endcomponent
+    @endcomponent
+
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col-xl-12">
                 <div class="card">
-                    <div class="card-header">%%modelName%% {{ $%%crudNameSingular%%->%%primaryKey%% }}</div>
+                    <div class="card-header">%%modelName%% </div>
                     <div class="card-body">
 
-                        <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $%%crudNameSingular%%->%%primaryKey%% . '/edit') }}" title="Edit %%modelName%%"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                        <form method="POST" action="{{ url('%%routeGroup%%%%crudName%%' . '/' . $%%crudNameSingular%%->%%primaryKey%%) }}" accept-charset="UTF-8" style="display:inline">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete %%modelName%%" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                        </form>
-                        <br/>
-                        <br/>
-
+                        {{-- <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a> --}}
+                        
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
-                                    <tr>
-                                        <th>ID</th><td>{{ $%%crudNameSingular%%->%%primaryKey%% }}</td>
-                                    </tr>
+                                    {{-- 
+                                        <tr>
+                                            <th>ID</th><td>{{ $%%crudNameSingular%%->%%primaryKey%% }}</td>
+                                        </tr>
+                                    --}}
                                     %%formBodyHtmlForShowView%%
                                 </tbody>
                             </table>
