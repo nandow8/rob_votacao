@@ -53,7 +53,7 @@
                                         <td>
                                             <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}" title="Visualizar %%modelName%%"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                             <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" title="Editar %%modelName%%"><button class="btn btn-primary btn-sm"><i class="fas fa-edit" aria-hidden="true"></i></button></a>
-                                            <button type="submit" data-id="{{$item->%%primaryKey%%}}" data-route="%%routeGroup%%%%viewName%%" class="btnDeletar btn btn-danger btn-sm" title="Deletar %%modelName%%"><i class="fa fa-trash" aria-hidden="true"></i></button>                               
+                                            <button type="submit" data-id="{{$item->%%primaryKey%%}}" data-route="/%%routeGroup%%%%viewName%%" class="btnDeletar btn btn-danger btn-sm" title="Deletar %%modelName%%"><i class="fa fa-trash" aria-hidden="true"></i></button>                               
                                         </td>
                                     </tr>
                                 @endforeach
