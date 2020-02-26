@@ -1,7 +1,3 @@
-<?php 
-    $parentSection = 'dashboards'; 
-    $elementName = 'dashboards'; 
-?>
 <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
     <div class="scrollbar-inner scroll-scrollx_visible">
         <div class="sidenav-header d-flex align-items-center">
