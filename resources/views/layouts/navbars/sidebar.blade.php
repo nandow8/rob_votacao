@@ -46,35 +46,30 @@
                                 <li class="nav-item {{ $elementName == 'profile' ? 'active' : '' }}">
                                     <a href="{{ route('home') }}" class="nav-link">{{ __('Profile') }}</a>
                                 </li>
-                                @can('manage-users', App\User::class)
                                     <li class="nav-item  {{ $elementName == 'role-management' ? 'active' : '' }}">
-                                        <a href="{{ route('role.index') }}" class="nav-link">{{ __('Role Management') }}</a>
+                                        <a href="{{ route('home') }}" class="nav-link">{{ __('Role Management') }}</a>
                                     </li>
-                                @endcan
-                                @can('manage-users', App\User::class)
+                                
                                     <li class="nav-item {{ $elementName == 'user-management' ? 'active' : '' }}">
-                                        <a href="{{ route('user.index') }}" class="nav-link">{{ __('User Management') }}</a>
+                                        <a href="{{ route('home') }}" class="nav-link">{{ __('User Management') }}</a>
                                     </li>
-                                @endcan
-                                @can('manage-items', App\User::class)
+                                
                                     <li class="nav-item {{ $elementName == 'category-management' ? 'active' : '' }}">
-                                        <a href="{{ route('category.index') }}" class="nav-link">{{ __('Category Management') }}</a>
+                                        <a href="{{ route('home') }}" class="nav-link">{{ __('Category Management') }}</a>
                                     </li>
-                                @endcan
-                                @can('manage-items', App\User::class)
+                                
                                     <li class="nav-item {{ $elementName == 'tag-management' ? 'active' : '' }}">
-                                        <a href="{{ route('tag.index') }}" class="nav-link">{{ __('Tag Management') }}</a>
+                                        <a href="{{ route('home') }}" class="nav-link">{{ __('Tag Management') }}</a>
                                     </li>
-                                @endcan
-                                @can('manage-items', App\User::class)
+                                
                                     <li class="nav-item {{ $elementName == 'item-management' ? 'active' : '' }}">
                                         <a href="{{ route('home') }}" class="nav-link">{{ __('Item Management') }}</a>
                                     </li>
-                                @else
+                                
                                     <li class="nav-item {{ $elementName == 'item-management' ? 'active' : '' }}">
                                         <a href="{{ route('home') }}" class="nav-link">{{ __('Items') }}</a>
                                     </li>
-                                @endcan
+                                
                             </ul>
                         </div>
                     </li>
