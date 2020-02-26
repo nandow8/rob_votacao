@@ -2,11 +2,13 @@
 
 namespace DummyNamespace;
 
-use Illuminate\Database\Eloquent\Model;
 {{useSoftDeletes}}
-class DummyClass extends Model
+
+class DummyClass extends BaseModel
 {
-    {{softDeletes}}/**
+    {{softDeletes}}
+    
+    /**
      * The database table used by the model.
      *
      * @var string
@@ -14,13 +16,6 @@ class DummyClass extends Model
     protected $table = '{{table}}';
 
     {{primaryKey}}
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = {{fillable}};
 
     {{relationships}}
 }
