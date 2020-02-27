@@ -4,14 +4,14 @@
 ])
 
 @section('content')
-    @component('layouts.headers.auth') 
+    @component('layouts.headers.auth')
         @component('layouts.headers.breadcrumbs')
-            @slot('title') 
-                {{ __('') }} 
+            @slot('title')
+                {{ __('') }}
             @endslot
 
             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ __('%%crudNameCap%%') }}</li>
+            <li class="breadcrumb-item"><a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="%%crudNameCap%%"> %%crudNameCap%% </a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ __('Novo %%crudNameCap%%') }}</li>
         @endcomponent
     @endcomponent
