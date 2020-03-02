@@ -114,6 +114,6 @@ class DummyClass extends Controller
     {
         {{modelName}}::destroy($id);
 
-        return redirect('{{routeGroup}}{{viewName}}')->with('flash_message', '{{modelName}} deleted!');
+        return json_encode(1);
     }
 }
