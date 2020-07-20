@@ -42,14 +42,18 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>User Id</th><th>Ferramentas</th>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Ferramentas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($candidato as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->user_id }}</td>
+                                        <td>{{ $item->nome }}</td>
+                                        <td>{{ $item->descricao }}</td>
                                         <td>
                                             <a href="{{ url('/admin/candidato/' . $item->id) }}" title="Visualizar Candidato"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                                             <a href="{{ url('/admin/candidato/' . $item->id . '/edit') }}" title="Editar Candidato"><button class="btn btn-primary btn-sm"><i class="fas fa-edit" aria-hidden="true"></i></button></a>
