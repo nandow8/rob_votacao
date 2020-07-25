@@ -20,7 +20,11 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
-                    <div class="card-header">Resultado </div>
+                    <div class="card-header">Resultado 
+                        <span class="float-right">
+                            Data da enquete: {{ date("d/m/Y", strtotime($tituloEnquete->created_at))}} {{ date("G:i", strtotime($tituloEnquete->created_at))}}
+                        </span>
+                    </div>
                     <div class="card-body">
                         
                        {{$tituloEnquete->titulo}}
