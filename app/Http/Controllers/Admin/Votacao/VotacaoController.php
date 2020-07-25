@@ -111,10 +111,16 @@ class VotacaoController extends Controller
      */
     public function store(Request $request)
     {
+
+        Votacao::create([
+            'user_id' => Auth::user()->id,
+            'enquete_id' => $request->enquete_id,
+            'candidato_id' => $request->atendecompra,
+            // 'voto' => 'sim'
+            'multiplos' => 1
+        ]);
         
-        $requestData = $request->all();
         
-        Votacao::create($requestData);
 
         return redirect('admin/votacao')->with('flash_message', 'Votacao added!');
     }
