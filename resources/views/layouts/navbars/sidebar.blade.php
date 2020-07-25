@@ -38,6 +38,12 @@
                             <span class="nav-link-text">Votação</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('admin/resultados')}}">
+                            <i class="ni ni-spaceship"></i>
+                            <span class="nav-link-text">Resultados</span>
+                        </a>
+                    </li>
                     {{-- <li class="nav-item {{ $parentSection == 'dashboards' ? 'active' : '' }}">
                         <a class="nav-link collapsed" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="{{ $parentSection == 'dashboards' ? 'true' : '' }}" aria-controls="navbar-dashboards">
                             <i class="ni ni-shop text-primary"></i>

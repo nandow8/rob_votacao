@@ -122,7 +122,7 @@ class VotacaoController extends Controller
         
         
 
-        return redirect('admin/votacao')->with('flash_message', 'Votacao added!');
+        return redirect('admin/votacao')->with('success','Voto computado com sucesso!');
     }
 
     /**

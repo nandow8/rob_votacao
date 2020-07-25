@@ -28,3 +28,6 @@ Route::resource('admin/votacao', 'Admin\Votacao\VotacaoController');
 Route::post('admin/votacao/sim', 'Admin\Votacao\VotacaoController@sim');
 Route::post('admin/votacao/nao', 'Admin\Votacao\VotacaoController@nao');
 Route::post('admin/votacao/abstencao', 'Admin\Votacao\VotacaoController@abstencao');
+Route::resource('admin/resultados', 'Admin\Grafico\GraficoController');
+
+Route::get('resultados', 'Admin\Grafico\GraficoController@resultados');
