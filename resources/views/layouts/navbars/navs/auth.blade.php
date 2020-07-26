@@ -7,9 +7,9 @@
                 <div class="form-group mb-0">
                     <div class="input-group input-group-alternative input-group-merge">
                         <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            <span style="background-color: #5E72E4;" class="input-group-text"></span>
                         </div>
-                        <input class="form-control" placeholder="{{ __('Search') }}" type="text">
+                        {{-- <input class="form-control" placeholder="{{ __('Search') }}" type="text"> --}}
                     </div>
                 </div>
                 <button type="button" class="close" data-action="search-close" data-target="#navbar-search-main" aria-label="Close">
@@ -34,9 +34,9 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{-- <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ni ni-bell-55"></i>
-                    </a>
+                    </a> --}}
                     <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right py-0 overflow-hidden">
                         <!-- Dropdown header -->
                         <div class="px-3 py-3">
@@ -145,9 +145,9 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{-- <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ni ni-ungroup"></i>
-                    </a>
+                    </a> --}}
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-dark bg-default dropdown-menu-right">
                         <div class="row shortcuts px-4">
                             <a href="#!" class="col-4 shortcut-item">
@@ -203,7 +203,7 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-header noti-title">
+                        {{-- <div class="dropdown-header noti-title">
                             <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
                         </div>
                         <a href="{{ route('home') }}" class="dropdown-item">
@@ -221,7 +221,7 @@
                         <a href="#!" class="dropdown-item">
                             <i class="ni ni-support-16"></i>
                             <span>{{ __('Support') }}</span>
-                        </a>
+                        </a> --}}
                         <div class="dropdown-divider"></div>
                         <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
