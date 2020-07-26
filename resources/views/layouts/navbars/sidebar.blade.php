@@ -21,28 +21,31 @@
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Nav items -->
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/candidato')}}">
-                            <i class="ni ni-spaceship"></i>
-                            <span class="nav-link-text">Candidatos</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/enquete')}}">
-                            <i class="ni ni-spaceship"></i>
-                            <span class="nav-link-text">Enquetes</span>
-                        </a>
-                    </li>
+                    @if (auth()->user()->tipo == 'admin')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('admin/candidato')}}">
+                                <i class="ni ni-spaceship"></i>
+                                <span class="nav-link-text">Candidatos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('admin/enquete')}}">
+                                <i class="ni ni-spaceship"></i>
+                                <span class="nav-link-text">Enquetes</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('admin/resultados')}}">
+                                <i class="ni ni-spaceship"></i>
+                                <span class="nav-link-text">Resultados</span>
+                            </a>
+                        </li>
+                    @endif
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('admin/votacao')}}">
                             <i class="ni ni-spaceship"></i>
                             <span class="nav-link-text">Votação</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/resultados')}}">
-                            <i class="ni ni-spaceship"></i>
-                            <span class="nav-link-text">Resultados</span>
                         </a>
                     </li>
                     {{-- <li class="nav-item {{ $parentSection == 'dashboards' ? 'active' : '' }}">
