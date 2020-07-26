@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/mudarsenha', 'HomeController@mudarSenha');
+Route::post('/mudarsenha', 'HomeController@updatePerfil');
 
 Route::resource('admin/posts', 'Admin\\PostsController');
 Route::resource('admin/candidato', 'Admin\Candidato\CandidatoController');

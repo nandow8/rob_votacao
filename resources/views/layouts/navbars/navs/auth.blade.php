@@ -203,13 +203,14 @@
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        {{-- <div class="dropdown-header noti-title">
+                        <div class="dropdown-header noti-title">
                             <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
                         </div>
-                        <a href="{{ route('home') }}" class="dropdown-item">
+                        <a href="{{ url('mudarsenha') }}" class="dropdown-item">
                             <i class="ni ni-single-02"></i>
-                            <span>{{ __('My profile') }}</span>
+                            <span>{{ __('Mudar Senha') }}</span>
                         </a>
+                        {{--
                         <a href="#!" class="dropdown-item">
                             <i class="ni ni-settings-gear-65"></i>
                             <span>{{ __('Settings') }}</span>
