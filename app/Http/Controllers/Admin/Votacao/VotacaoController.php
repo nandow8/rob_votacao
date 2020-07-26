@@ -47,6 +47,9 @@ class VotacaoController extends Controller
         ->join('candidatos', 'candidatos.id', 'enquete_candidatos.candidato_id')
         ->get();
 
+        if (!Enquete::first())
+            return view('admin.votacao.naotemvotacao');
+
         if(Votacao::where('user_id', Auth::user()->id)->where('enquete_id', $enquetes[0]->enquete_id)->first()){
             return view('admin.votacao.javotou', compact('enquetes'));
         }
