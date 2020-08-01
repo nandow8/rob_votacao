@@ -90,9 +90,11 @@ class EnqueteController extends Controller
      */
     public function edit($id)
     {
+        
+        $candidatos = Candidato::all();
         $enquete = Enquete::findOrFail($id);
 
-        return view('admin.enquete.edit', compact('enquete'));
+        return view('admin.enquete.edit', compact('enquete', 'candidatos'));
     }
 
     /**
@@ -106,12 +108,25 @@ class EnqueteController extends Controller
     public function update(Request $request, $id)
     {
         
-        $requestData = $request->all();
+        $requestData = $request->except('candidato_id');
         
-        $enquete = Enquete::findOrFail($id);
-        $enquete->update($requestData);
+        $enquete = Enquete::where('id', $id)->first();
 
-        return redirect('admin/enquete')->with('flash_message', 'Enquete updated!');
+        $enquete->update([
+            'titulo' => $requestData['titulo'],
+            'descricao' => $requestData['descricao']
+        ]);
+        
+        EnqueteCandidato::where('enquete_id', $enquete->id)->forceDelete();
+        
+        foreach ($request->candidato_id as $key => $value) {
+            EnqueteCandidato::create([
+                'enquete_id' => $enquete->id,
+                'candidato_id' => $value,
+            ]);
+        }
+
+        return redirect('admin/enquete')->with('flash_message', 'Enquete added!');
     }
 
     /**
