@@ -109,6 +109,10 @@ class GraficoController extends Controller
                 AND votacaos.enquete_id = $enqueteID
             GROUP BY
                 votacaos.voto");
+            
+            if ($resultados == null) {
+                return view('admin.grafico.semnada', compact('resultados', 'tituloEnquete'));    
+            }
 
             return view('admin.grafico.show', compact('resultados', 'tituloEnquete'));
         }
